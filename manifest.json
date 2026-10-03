@@ -1,0 +1,807 @@
+{
+  "plugin_id": "xy_algorithm",
+  "name": "数据算法与文本工具 (Data & Text Tools)",
+  "version": "0.51.0",
+  "group": "Algorithm",
+  "group_icon": "🧮",
+  "description": "提供文本查找替换、正则表达式、JSON 数据提取、列表与字典存取、随机数生成、常用计算与 MD5/SHA256 加密等工具",
+  "actions": [
+    {
+      "tag": "AccessArray",
+      "display_name": "访问数组元素 (AccessArray)",
+      "icon": "📑",
+      "platforms": "All",
+      "description": "根据位置序号读取、修改或取出列表中的某一项数据",
+      "keywords": [
+        "algorithm",
+        "array",
+        "index",
+        "tuple",
+        "数组",
+        "下标访问"
+      ],
+      "fields": [
+        {
+          "name": "value",
+          "display_name": "目标数组",
+          "intrinsic_type": "string",
+          "default_type": "string",
+          "default_value": "()",
+          "presets": [],
+          "description": "数组/元组对象引用"
+        },
+        {
+          "name": "index",
+          "display_name": "索引位置",
+          "intrinsic_type": "string",
+          "default_type": "number",
+          "default_value": "0",
+          "presets": [
+            "0",
+            "1",
+            "-1"
+          ],
+          "description": "下标索引"
+        }
+      ],
+      "output_type": "Mixed"
+    },
+    {
+      "tag": "AccessKey",
+      "display_name": "读取字典键值 (AccessKey)",
+      "icon": "🔑",
+      "platforms": "All",
+      "description": "根据名称查询 JSON 或字典中对应的内容",
+      "keywords": [
+        "algorithm",
+        "map",
+        "key",
+        "dict",
+        "json",
+        "字典",
+        "键值对"
+      ],
+      "fields": [
+        {
+          "name": "map",
+          "display_name": "目标字典",
+          "intrinsic_type": "string",
+          "default_type": "string",
+          "default_value": "{}",
+          "presets": [],
+          "description": "字典或 JSON 对象"
+        },
+        {
+          "name": "key",
+          "display_name": "键名称",
+          "intrinsic_type": "string",
+          "default_type": "string",
+          "default_value": "",
+          "presets": [],
+          "description": "Key 字符串"
+        }
+      ],
+      "output_type": "Mixed"
+    },
+    {
+      "tag": "ArraySize",
+      "display_name": "获取数组长度 (ArraySize)",
+      "icon": "📏",
+      "platforms": "All",
+      "description": "计算列表、文本或数组中包含的元素个数",
+      "keywords": [
+        "algorithm",
+        "array",
+        "size",
+        "len",
+        "count",
+        "数组长度"
+      ],
+      "fields": [
+        {
+          "name": "value",
+          "display_name": "目标集合",
+          "intrinsic_type": "string",
+          "default_type": "string",
+          "default_value": "()",
+          "presets": [],
+          "description": "数组、元组或 JSON 数组"
+        }
+      ],
+      "output_type": "number"
+    },
+    {
+      "tag": "ArrayOperations",
+      "display_name": "集合综合运算 (ArrayOperations)",
+      "icon": "🔄",
+      "platforms": "All",
+      "description": "对列表进行排序、反转、去重、检查是否包含某项、添加或删除元素等操作",
+      "keywords": [
+        "algorithm",
+        "array",
+        "sort",
+        "reverse",
+        "unique",
+        "slice",
+        "push",
+        "pop",
+        "集合运算"
+      ],
+      "fields": [
+        {
+          "name": "array",
+          "display_name": "输入数组",
+          "intrinsic_type": "string",
+          "default_type": "tuple",
+          "default_value": "()",
+          "presets": [],
+          "description": "输入元组或数组"
+        },
+        {
+          "name": "operation",
+          "display_name": "操作指令",
+          "intrinsic_type": "string",
+          "default_type": "string",
+          "default_value": "sort",
+          "presets": [
+            "sort",
+            "reverse",
+            "unique",
+            "contains",
+            "index_of",
+            "slice",
+            "push",
+            "pop",
+            "remove_at"
+          ],
+          "description": "操作类型"
+        },
+        {
+          "name": "param",
+          "display_name": "操作参数",
+          "intrinsic_type": "string",
+          "default_type": "string",
+          "default_value": "",
+          "presets": [],
+          "description": "额外参数 (如追加的值、切片范围 0,2 或待查找值)"
+        }
+      ],
+      "output_type": "Mixed"
+    },
+    {
+      "tag": "JsonQuery",
+      "display_name": "JSON 路径查询 (JsonQuery)",
+      "icon": "🔍",
+      "platforms": "All",
+      "description": "根据路径快速提取 JSON 数据中深层的某项具体内容",
+      "keywords": [
+        "algorithm",
+        "json",
+        "query",
+        "path",
+        "jsonpath",
+        "JSON提取"
+      ],
+      "fields": [
+        {
+          "name": "json",
+          "display_name": "输入 JSON",
+          "intrinsic_type": "string",
+          "default_type": "string",
+          "default_value": "{}",
+          "presets": [],
+          "description": "JSON 文本或字典对象"
+        },
+        {
+          "name": "path",
+          "display_name": "提取路径",
+          "intrinsic_type": "string",
+          "default_type": "string",
+          "default_value": "",
+          "presets": [
+            "data.items[0].id",
+            "status"
+          ],
+          "description": "点分路径如 a.b[0].c"
+        }
+      ],
+      "output_type": "Mixed"
+    },
+    {
+      "tag": "SubString",
+      "display_name": "截取子字符串 (SubString)",
+      "icon": "✂️",
+      "platforms": "All",
+      "description": "截取文本中指定位置和长度的一段文字",
+      "keywords": [
+        "algorithm",
+        "string",
+        "substring",
+        "slice",
+        "截取文本"
+      ],
+      "fields": [
+        {
+          "name": "text",
+          "display_name": "输入文本",
+          "intrinsic_type": "string",
+          "default_type": "string",
+          "default_value": "",
+          "presets": [],
+          "description": "原始文本"
+        },
+        {
+          "name": "start",
+          "display_name": "起始位置",
+          "intrinsic_type": "number",
+          "default_type": "number",
+          "default_value": "0",
+          "presets": [
+            "0",
+            "1",
+            "-1"
+          ],
+          "description": "起始字符下标"
+        },
+        {
+          "name": "length",
+          "display_name": "截取长度",
+          "intrinsic_type": "number",
+          "default_type": "number",
+          "default_value": "-1",
+          "presets": [
+            "-1",
+            "5",
+            "10"
+          ],
+          "description": "-1 表示截取至末尾"
+        }
+      ],
+      "output_type": "string"
+    },
+    {
+      "tag": "SplitString",
+      "display_name": "拆分字符串 (SplitString)",
+      "icon": "🪓",
+      "platforms": "All",
+      "description": "按照指定符号将一整段文字拆分成多个部分",
+      "keywords": [
+        "algorithm",
+        "string",
+        "split",
+        "拆分文本"
+      ],
+      "fields": [
+        {
+          "name": "text",
+          "display_name": "输入文本",
+          "intrinsic_type": "string",
+          "default_type": "string",
+          "default_value": "",
+          "presets": [],
+          "description": "原始文本"
+        },
+        {
+          "name": "delimiter",
+          "display_name": "拆分分隔符",
+          "intrinsic_type": "string",
+          "default_type": "string",
+          "default_value": ",",
+          "presets": [
+            ",",
+            "-",
+            "\\n",
+            " "
+          ],
+          "description": "分隔符"
+        }
+      ],
+      "output_type": "Tuple"
+    },
+    {
+      "tag": "JoinString",
+      "display_name": "连接字符串列表 (JoinString)",
+      "icon": "🔗",
+      "platforms": "All",
+      "description": "使用指定的分隔符将多段文字拼接组合成一整句话",
+      "keywords": [
+        "algorithm",
+        "string",
+        "join",
+        "concat",
+        "拼接文本"
+      ],
+      "fields": [
+        {
+          "name": "array",
+          "display_name": "字符串数组",
+          "intrinsic_type": "string",
+          "default_type": "tuple",
+          "default_value": "()",
+          "presets": [],
+          "description": "输入元组或数组"
+        },
+        {
+          "name": "delimiter",
+          "display_name": "连接分隔符",
+          "intrinsic_type": "string",
+          "default_type": "string",
+          "default_value": ",",
+          "presets": [
+            ",",
+            "-",
+            "\\n",
+            ""
+          ],
+          "description": "分隔符"
+        }
+      ],
+      "output_type": "string"
+    },
+    {
+      "tag": "RegexProcess",
+      "display_name": "正则表达式处理 (RegexProcess)",
+      "icon": "🧪",
+      "platforms": "All",
+      "description": "使用正则表达式查找、提取或批量替换符合规则的文字",
+      "keywords": [
+        "algorithm",
+        "regex",
+        "match",
+        "extract",
+        "replace",
+        "正则表达式"
+      ],
+      "fields": [
+        {
+          "name": "text",
+          "display_name": "输入文本",
+          "intrinsic_type": "string",
+          "default_type": "string",
+          "default_value": "",
+          "presets": [],
+          "description": "目标文本"
+        },
+        {
+          "name": "pattern",
+          "display_name": "正则模式",
+          "intrinsic_type": "string",
+          "default_type": "string",
+          "default_value": "\\d+",
+          "presets": [
+            "\\d+",
+            "[a-zA-Z]+",
+            "https?://\\S+"
+          ],
+          "description": "正则表达式"
+        },
+        {
+          "name": "action_type",
+          "display_name": "处理动作",
+          "intrinsic_type": "string",
+          "default_type": "string",
+          "default_value": "extract",
+          "presets": [
+            "match",
+            "extract",
+            "extract_all",
+            "replace"
+          ],
+          "description": "执行操作"
+        },
+        {
+          "name": "replacement",
+          "display_name": "替换文本",
+          "intrinsic_type": "string",
+          "default_type": "string",
+          "default_value": "",
+          "presets": [],
+          "description": "替换内容 (仅 replace 生效)"
+        }
+      ],
+      "output_type": "Mixed"
+    },
+    {
+      "tag": "TextTransform",
+      "display_name": "文本格式转换 (TextTransform)",
+      "icon": "🔤",
+      "platforms": "All",
+      "description": "去除文本两端空格、转换英文字母大小写、或进行常用文本编解码",
+      "keywords": [
+        "algorithm",
+        "text",
+        "trim",
+        "lower",
+        "upper",
+        "base64",
+        "url",
+        "文本转换"
+      ],
+      "fields": [
+        {
+          "name": "text",
+          "display_name": "输入文本",
+          "intrinsic_type": "string",
+          "default_type": "string",
+          "default_value": "",
+          "presets": [],
+          "description": "原始文本"
+        },
+        {
+          "name": "operation",
+          "display_name": "转换类型",
+          "intrinsic_type": "string",
+          "default_type": "string",
+          "default_value": "trim",
+          "presets": [
+            "trim",
+            "to_lower",
+            "to_upper",
+            "base64_encode",
+            "base64_decode",
+            "url_encode",
+            "url_decode"
+          ],
+          "description": "转换规则"
+        }
+      ],
+      "output_type": "string"
+    },
+    {
+      "tag": "RandomNumber",
+      "display_name": "生成随机数字 (RandomNumber)",
+      "icon": "🎲",
+      "platforms": "All",
+      "description": "在指定范围内生成一个随机整数或小数",
+      "keywords": [
+        "algorithm",
+        "random",
+        "number",
+        "range",
+        "随机数"
+      ],
+      "fields": [
+        {
+          "name": "range",
+          "display_name": "随机范围",
+          "intrinsic_type": "string",
+          "default_type": "string",
+          "default_value": "0..100",
+          "presets": [
+            "0..100",
+            "1..10",
+            "0.0..1.0"
+          ],
+          "description": "下限..上限"
+        }
+      ],
+      "output_type": "number"
+    },
+    {
+      "tag": "MathEval",
+      "display_name": "数值统计与运算 (MathEval)",
+      "icon": "🧮",
+      "platforms": "All",
+      "description": "对一组数字计算求和、平均值、最大最小值或进行四则运算",
+      "keywords": [
+        "algorithm",
+        "math",
+        "sum",
+        "avg",
+        "min",
+        "max",
+        "round",
+        "数学运算"
+      ],
+      "fields": [
+        {
+          "name": "operation",
+          "display_name": "运算指令",
+          "intrinsic_type": "string",
+          "default_type": "string",
+          "default_value": "sum",
+          "presets": [
+            "sum",
+            "avg",
+            "min",
+            "max",
+            "round",
+            "abs",
+            "add",
+            "sub",
+            "mul",
+            "div",
+            "pow"
+          ],
+          "description": "运算类型"
+        },
+        {
+          "name": "values",
+          "display_name": "数值集合/首参数",
+          "intrinsic_type": "string",
+          "default_type": "string",
+          "default_value": "",
+          "presets": [],
+          "description": "逗号分隔数字或元组"
+        },
+        {
+          "name": "param",
+          "display_name": "附加参数/次参数",
+          "intrinsic_type": "number",
+          "default_type": "number",
+          "default_value": "0",
+          "presets": [
+            "0",
+            "2"
+          ],
+          "description": "保留小数位数或次操作数"
+        }
+      ],
+      "output_type": "real"
+    },
+    {
+      "tag": "DateTimeHelper",
+      "display_name": "日期时间助手 (DateTimeHelper)",
+      "icon": "📅",
+      "platforms": "All",
+      "description": "获取当前日期时间、时间戳，或进行时间的加减换算",
+      "keywords": [
+        "algorithm",
+        "date",
+        "time",
+        "timestamp",
+        "now",
+        "日期时间"
+      ],
+      "fields": [
+        {
+          "name": "operation",
+          "display_name": "操作指令",
+          "intrinsic_type": "string",
+          "default_type": "string",
+          "default_value": "now",
+          "presets": [
+            "now",
+            "timestamp",
+            "timestamp_ms",
+            "utc_now"
+          ],
+          "description": "操作类型"
+        },
+        {
+          "name": "format_str",
+          "display_name": "格式化规则",
+          "intrinsic_type": "string",
+          "default_type": "string",
+          "default_value": "%Y-%m-%d %H:%M:%S",
+          "presets": [
+            "%Y-%m-%d %H:%M:%S",
+            "%Y-%m-%d",
+            "%H:%M:%S",
+            "%Y%m%d_%H%M%S"
+          ],
+          "description": "Strftime 格式"
+        },
+        {
+          "name": "offset_seconds",
+          "display_name": "时间偏移秒数",
+          "intrinsic_type": "number",
+          "default_type": "number",
+          "default_value": "0",
+          "presets": [
+            "0",
+            "86400",
+            "-86400"
+          ],
+          "description": "偏移量 (秒)"
+        }
+      ],
+      "output_type": "Mixed"
+    },
+    {
+      "tag": "RandomPoint",
+      "display_name": "生成随机坐标点 (RandomPoint)",
+      "icon": "📍",
+      "platforms": "All",
+      "description": "在目标坐标周围随机轻微偏移，模拟真人的鼠标点击习惯",
+      "keywords": [
+        "algorithm",
+        "random",
+        "point",
+        "jitter",
+        "humanize",
+        "随机坐标"
+      ],
+      "fields": [
+        {
+          "name": "center",
+          "display_name": "中心坐标 (X, Y)",
+          "intrinsic_type": "string",
+          "default_type": "string",
+          "default_value": "100, 100",
+          "presets": [
+            "100, 100"
+          ],
+          "description": "基准点"
+        },
+        {
+          "name": "radius",
+          "display_name": "扰动半径 (像素)",
+          "intrinsic_type": "number",
+          "default_type": "number",
+          "default_value": "10",
+          "presets": [
+            "5",
+            "10",
+            "20"
+          ],
+          "description": "抖动半径"
+        }
+      ],
+      "output_type": "Tuple"
+    },
+    {
+      "tag": "RectOperations",
+      "display_name": "矩形几何计算 (RectOperations)",
+      "icon": "📐",
+      "platforms": "All",
+      "description": "计算矩形中心位置、检查某个坐标是否在区域内，或调整区域大小",
+      "keywords": [
+        "algorithm",
+        "rect",
+        "geometry",
+        "center",
+        "contains",
+        "矩形计算"
+      ],
+      "fields": [
+        {
+          "name": "rect",
+          "display_name": "目标矩形 (X, Y, W, H)",
+          "intrinsic_type": "string",
+          "default_type": "string",
+          "default_value": "0, 0, 100, 100",
+          "presets": [
+            "0, 0, 100, 100"
+          ],
+          "description": "矩形四元组"
+        },
+        {
+          "name": "operation",
+          "display_name": "操作指令",
+          "intrinsic_type": "string",
+          "default_type": "string",
+          "default_value": "center",
+          "presets": [
+            "center",
+            "contains_point",
+            "offset",
+            "expand",
+            "bottom_right"
+          ],
+          "description": "计算类型"
+        },
+        {
+          "name": "param",
+          "display_name": "运算参数",
+          "intrinsic_type": "string",
+          "default_type": "string",
+          "default_value": "",
+          "presets": [
+            "50, 50",
+            "10, 10"
+          ],
+          "description": "点坐标 (PX, PY) 或偏移量 (DX, DY)"
+        }
+      ],
+      "output_type": "Mixed"
+    },
+    {
+      "tag": "GridGenerator",
+      "display_name": "网格矩阵生成 (GridGenerator)",
+      "icon": "▦",
+      "platforms": "All",
+      "description": "自动生成多行多列的网格坐标点，常用于表格行或九宫格批量点击",
+      "keywords": [
+        "algorithm",
+        "grid",
+        "matrix",
+        "points",
+        "generator",
+        "网格生成"
+      ],
+      "fields": [
+        {
+          "name": "start_point",
+          "display_name": "起始左上角 (X, Y)",
+          "intrinsic_type": "string",
+          "default_type": "string",
+          "default_value": "100, 100",
+          "presets": [
+            "100, 100",
+            "0, 0"
+          ],
+          "description": "起始原点"
+        },
+        {
+          "name": "rows",
+          "display_name": "网格行数",
+          "intrinsic_type": "number",
+          "default_type": "number",
+          "default_value": "3",
+          "presets": [
+            "2",
+            "3",
+            "5"
+          ],
+          "description": "行数"
+        },
+        {
+          "name": "cols",
+          "display_name": "网格列数",
+          "intrinsic_type": "number",
+          "default_type": "number",
+          "default_value": "3",
+          "presets": [
+            "2",
+            "3",
+            "5"
+          ],
+          "description": "列数"
+        },
+        {
+          "name": "step",
+          "display_name": "间距步长 (DX, DY)",
+          "intrinsic_type": "string",
+          "default_type": "string",
+          "default_value": "50, 50",
+          "presets": [
+            "50, 50",
+            "100, 100"
+          ],
+          "description": "单元格间距"
+        }
+      ],
+      "output_type": "Tuple"
+    },
+    {
+      "tag": "HashDigest",
+      "display_name": "哈希摘要计算 (HashDigest)",
+      "icon": "🔒",
+      "platforms": "All",
+      "description": "计算文本或数据的 MD5、SHA256 哈希值，用于数据校验或加密",
+      "keywords": [
+        "algorithm",
+        "hash",
+        "md5",
+        "sha256",
+        "digest",
+        "哈希计算"
+      ],
+      "fields": [
+        {
+          "name": "text",
+          "display_name": "输入文本",
+          "intrinsic_type": "string",
+          "default_type": "string",
+          "default_value": "",
+          "presets": [],
+          "description": "原始文本"
+        },
+        {
+          "name": "algorithm",
+          "display_name": "哈希算法",
+          "intrinsic_type": "string",
+          "default_type": "string",
+          "default_value": "sha256",
+          "presets": [
+            "sha256",
+            "md5"
+          ],
+          "description": "算法名称"
+        }
+      ],
+      "output_type": "string"
+    }
+  ]
+}
