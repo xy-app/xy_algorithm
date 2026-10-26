@@ -1,75 +1,83 @@
 {
-  "name": "数据算法与文本工具 (Data & Text Tools)",
-  "description": "提供文本查找替换、正则表达式、JSON 数据提取、列表与字典存取、随机数生成、常用计算与 MD5/SHA256 加密等工具",
-  "group": "演算法邏輯",
+  "name": "資料與文字工具 (Data & Text Tools)",
+  "description": "提供文字尋找替換、正則表達式、JSON 數據提取、列表與字典存取、隨機數生成、常用計算與 MD5/SHA256 校驗等工具",
+  "group": "資料處理",
   "actions": {
     "AccessArray": {
-      "display_name": "存取陣列 (AccessArray)",
-      "description": "根据位置序号读取、修改或取出列表中的某一项数据"
+      "display_name": "訪問陣列元素 (AccessArray)",
+      "description": "根據位置序號讀取、修改或取出列表中的某依項數據"
     },
     "AccessKey": {
-      "display_name": "鍵值存取 (AccessKey)",
-      "description": "根据名称查询 JSON 或字典中对应的内容"
+      "display_name": "讀取字典鍵值 (AccessKey)",
+      "description": "根據名稱查詢 JSON 或字典中對應的內容"
     },
     "ArraySize": {
-      "display_name": "陣列長度 (ArraySize)",
-      "description": "计算列表、文本或数组中包含的元素个数"
+      "display_name": "取得陣列長度 (ArraySize)",
+      "description": "計算列表、文字或陣列中包含的元素個數"
     },
     "ArrayOperations": {
-      "display_name": "陣列操作 (ArrayOperations)",
-      "description": "对列表进行排序、反转、去重、检查是否包含某项、添加或删除元素等操作"
+      "display_name": "集合綜合運算 (ArrayOperations)",
+      "description": "對列表進行排序、反轉、去重、過濾空項、嵌套平鋪、檢查包含、添加或刪除元素等操作"
     },
     "JsonQuery": {
-      "display_name": "JSON 查詢 (JsonQuery)",
-      "description": "根据路径快速提取 JSON 数据中深层的某项具体内容"
+      "display_name": "JSON 路徑查詢 (JsonQuery)",
+      "description": "根據路徑、通配符全量提取或範圍切片快速提取 JSON 數據中深層屬性"
     },
     "SubString": {
       "display_name": "擷取子字串 (SubString)",
-      "description": "截取文本中指定位置和长度的一段文字"
+      "description": "擷取文字中指定位置和長度的一段文字"
     },
     "SplitString": {
-      "display_name": "分割字串 (SplitString)",
-      "description": "按照指定符号将一整段文字拆分成多个部分"
+      "display_name": "拆分字串 (SplitString)",
+      "description": "按照指定符號將一整段文字拆分成多個部分"
     },
     "JoinString": {
-      "display_name": "連接字串 (JoinString)",
-      "description": "使用指定的分隔符将多段文字拼接组合成一整句话"
+      "display_name": "連接字串列表 (JoinString)",
+      "description": "使用指定的分隔符將多段文字拼接組合咸一整句話"
     },
     "RegexProcess": {
-      "display_name": "正規表示式 (RegexProcess)",
-      "description": "使用正则表达式查找、提取或批量替换符合规则的文字"
+      "display_name": "正則表達式處理 (RegexProcess)",
+      "description": "使用正則表達式尋找、提取或批量替換符合規則的文字"
     },
     "TextTransform": {
-      "display_name": "文字轉換 (TextTransform)",
-      "description": "去除文本两端空格、转换英文字母大小写、或进行常用文本编解码"
+      "display_name": "文字格式轉換 (TextTransform)",
+      "description": "去除文字兩端空格、轉換英文字母大小寫、或進行常用文字編解碼"
     },
     "RandomNumber": {
-      "display_name": "隨機數 (RandomNumber)",
-      "description": "在指定范围内生成一个随机整数或小数"
+      "display_name": "生成隨機數字 (RandomNumber)",
+      "description": "在指定範圍內生成一個隨機整數或小數"
     },
     "MathEval": {
-      "display_name": "數學評估 (MathEval)",
-      "description": "对一组数字计算求和、平均值、最大最小值或进行四则运算"
+      "display_name": "數值統計與運算 (MathEval)",
+      "description": "對一組數字計算求和、平均值、最大最小值或進行四則運算"
     },
     "DateTimeHelper": {
-      "display_name": "日期時間 (DateTimeHelper)",
-      "description": "获取当前日期时间、时间戳，或进行时间的加减换算"
+      "display_name": "日期時間助手 (DateTimeHelper)",
+      "description": "取得當前日期時間、秒/毫秒/微秒時間戳、ISO-8601 格式，或進行時間加減"
     },
     "RandomPoint": {
-      "display_name": "隨機座標點 (RandomPoint)",
-      "description": "在目标坐标周围随机轻微偏移，模拟真人的鼠标点击习惯"
+      "display_name": "生成隨機座標點 (RandomPoint)",
+      "description": "在目標座標周圍隨機輕微偏移，模擬真人的滑鼠點擊習慣"
     },
     "RectOperations": {
-      "display_name": "矩形操作 (RectOperations)",
-      "description": "计算矩形中心位置、检查某个坐标是否在区域内，或调整区域大小"
+      "display_name": "矩形幾何計算 (RectOperations)",
+      "description": "計算矩形中心位置、射線法多邊形碰撞、外接包圍盒、點包含判定或尺寸調整"
     },
     "GridGenerator": {
-      "display_name": "網格生成 (GridGenerator)",
-      "description": "自动生成多行多列的网格坐标点，常用于表格行或九宫格批量点击"
+      "display_name": "網格矩陣生成 (GridGenerator)",
+      "description": "自動生成多行多列的網格座標點，常用於表格行或九宮格批量點擊"
     },
     "HashDigest": {
-      "display_name": "雜湊計算 (HashDigest)",
-      "description": "计算文本或数据的 MD5、SHA256 哈希值，用于数据校验或加密"
+      "display_name": "雜湊摘要計算 (HashDigest)",
+      "description": "計算文字或數據的 MD5、SHA256 雜湊值，用於數據校驗或加密"
+    },
+    "FileHash": {
+      "display_name": "檔案雜湊計算 (FileHash)",
+      "description": "分塊流式計算大檔案的 MD5 或 SHA256 雜湊校驗和，避免大檔案記憶體溢出"
+    },
+    "CreateObject": {
+      "display_name": "建立物件 (CreateObject)",
+      "description": "在記憶體中建立結構化資料實體（支援Point、Rect、Size、Color、Range、DateTime等）"
     }
   }
 }

@@ -1,75 +1,83 @@
 {
-  "name": "数据算法与文本工具 (Data & Text Tools)",
-  "description": "提供文本查找替换、正则表达式、JSON 数据提取、列表与字典存取、随机数生成、常用计算与 MD5/SHA256 加密等工具",
+  "name": "데이터 알고리즘 및 텍스트 도구",
+  "description": "텍스트 검색/치환, 정규식, JSON 쿼리, 배열/맵 연산, 난수 생성, 수식 계산 및 해시 계산 도구를 제공합니다.",
   "group": "알고리즘",
   "actions": {
     "AccessArray": {
       "display_name": "배열 요소 접근 (AccessArray)",
-      "description": "根据位置序号读取、修改或取出列表中的某一项数据"
+      "description": "인덱스 번호로 리스트 요소를 읽거나 수정합니다."
     },
     "AccessKey": {
       "display_name": "키 접근 (AccessKey)",
-      "description": "根据名称查询 JSON 或字典中对应的内容"
+      "description": "키 이름으로 JSON 또는 딕셔너리 내용을 조회합니다."
     },
     "ArraySize": {
       "display_name": "배열 크기 (ArraySize)",
-      "description": "计算列表、文本或数组中包含的元素个数"
+      "description": "리스트나 배열에 포함된 요소 개수를 계산합니다."
     },
     "ArrayOperations": {
       "display_name": "배열 연산 (ArrayOperations)",
-      "description": "对列表进行排序、反转、去重、检查是否包含某项、添加或删除元素等操作"
+      "description": "배열 정렬, 반전, 중복 제거, 빈 항목 필터링, 평탄화, 슬라이스, 요소 추가/삭제를 수행합니다."
     },
     "JsonQuery": {
       "display_name": "JSON 쿼리 (JsonQuery)",
-      "description": "根据路径快速提取 JSON 数据中深层的某项具体内容"
+      "description": "점 표기법, 와일드카드(*), 범위 슬라이스로 중첩된 JSON 데이터를 추출합니다."
     },
     "SubString": {
       "display_name": "부분 문자열 (SubString)",
-      "description": "截取文本中指定位置和长度的一段文字"
+      "description": "시작 위치와 길이에 따라 텍스트 일부분을 자릅니다."
     },
     "SplitString": {
       "display_name": "문자열 분할 (SplitString)",
-      "description": "按照指定符号将一整段文字拆分成多个部分"
+      "description": "구분 기호로 문자열을 리스트로 분할합니다."
     },
     "JoinString": {
       "display_name": "문자열 연결 (JoinString)",
-      "description": "使用指定的分隔符将多段文字拼接组合成一整句话"
+      "description": "배열 요소들을 구분 기호로 결합합니다."
     },
     "RegexProcess": {
       "display_name": "정규식 처리 (RegexProcess)",
-      "description": "使用正则表达式查找、提取或批量替换符合规则的文字"
+      "description": "정규 표현식으로 텍스트를 검색, 추출 또는 일괄 치환합니다."
     },
     "TextTransform": {
       "display_name": "텍스트 변환 (TextTransform)",
-      "description": "去除文本两端空格、转换英文字母大小写、或进行常用文本编解码"
+      "description": "공백 제거, 대소문자 변환, Base64 및 URL 인코딩/디코딩을 수행합니다."
     },
     "RandomNumber": {
       "display_name": "난수 생성 (RandomNumber)",
-      "description": "在指定范围内生成一个随机整数或小数"
+      "description": "지정한 범위 내에서 무작위 정수 또는 실수를 생성합니다."
     },
     "MathEval": {
       "display_name": "수학 연산 (MathEval)",
-      "description": "对一组数字计算求和、平均值、最大最小值或进行四则运算"
+      "description": "합계, 평균, 최댓값/최솟값 및 사칙연산을 계산합니다."
     },
     "DateTimeHelper": {
       "display_name": "날짜 및 시간 (DateTimeHelper)",
-      "description": "获取当前日期时间、时间戳，或进行时间的加减换算"
+      "description": "현재 날짜/시간, 타임스탬프(초/밀리초/마이크로초), ISO-8601 형식 및 시간 오프셋을 계산합니다."
     },
     "RandomPoint": {
       "display_name": "무작위 좌표 (RandomPoint)",
-      "description": "在目标坐标周围随机轻微偏移，模拟真人的鼠标点击习惯"
+      "description": "목표 좌표 주변에 약간의 무작위 오차를 주어 사람의 클릭 동작을 흉내 냅니다."
     },
     "RectOperations": {
       "display_name": "사각형 영역 연산 (RectOperations)",
-      "description": "计算矩形中心位置、检查某个坐标是否在区域内，或调整区域大小"
+      "description": "영역 중심점, 다각형 충돌 판정, 바운딩 박스 결합, 포함 여부 및 오프셋을 계산합니다."
     },
     "GridGenerator": {
       "display_name": "그리드 생성 (GridGenerator)",
-      "description": "自动生成多行多列的网格坐标点，常用于表格行或九宫格批量点击"
+      "description": "여러 행과 열의 그리드 좌표를 일괄 생성합니다."
     },
     "HashDigest": {
       "display_name": "해시 계산 (HashDigest)",
-      "description": "计算文本或数据的 MD5、SHA256 哈希值，用于数据校验或加密"
+      "description": "텍스트의 MD5, SHA256 해시값을 계산합니다."
+    },
+    "FileHash": {
+      "display_name": "파일 해시 계산 (FileHash)",
+      "description": "대용량 파일의 MD5, SHA256 체크섬을 스트리밍 방식으로 계산합니다."
+    },
+    "CreateObject": {
+      "display_name": "객체 생성 (CreateObject)",
+      "description": "메모리에 구조화된 데이터 객체 생성 (Point, Rect, Size, Color, Range, DateTime 등)"
     }
   }
 }

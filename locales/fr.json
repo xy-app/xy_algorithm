@@ -1,75 +1,83 @@
 {
-  "name": "数据算法与文本工具 (Data & Text Tools)",
-  "description": "提供文本查找替换、正则表达式、JSON 数据提取、列表与字典存取、随机数生成、常用计算与 MD5/SHA256 加密等工具",
+  "name": "Algorithmes de données & outils texte",
+  "description": "Fournit la recherche/remplacement de texte, les expressions régulières, l'extraction JSON, les opérations sur tableaux, les générateurs aléatoires et les calculs de hachage.",
   "group": "Algorithme",
   "actions": {
     "AccessArray": {
       "display_name": "Accès au tableau (AccessArray)",
-      "description": "根据位置序号读取、修改或取出列表中的某一项数据"
+      "description": "Lit ou modifie un élément dans un tableau par son index."
     },
     "AccessKey": {
       "display_name": "Accès par clé (AccessKey)",
-      "description": "根据名称查询 JSON 或字典中对应的内容"
+      "description": "Interroge un contenu JSON ou dictionnaire par nom de clé."
     },
     "ArraySize": {
       "display_name": "Taille de tableau (ArraySize)",
-      "description": "计算列表、文本或数组中包含的元素个数"
+      "description": "Calcule le nombre d'éléments contenus dans une liste ou un tableau."
     },
     "ArrayOperations": {
       "display_name": "Opérations de tableau (ArrayOperations)",
-      "description": "对列表进行排序、反转、去重、检查是否包含某项、添加或删除元素等操作"
+      "description": "Trie, inverse, dédoublonne, filtre les éléments vides, aplatit ou découpe les éléments."
     },
     "JsonQuery": {
       "display_name": "Requête JSON (JsonQuery)",
-      "description": "根据路径快速提取 JSON 数据中深层的某项具体内容"
+      "description": "Extrait des données JSON imbriquées via des expressions de chemin, des jokers (*) et des tranches."
     },
     "SubString": {
       "display_name": "Sous-chaîne (SubString)",
-      "description": "截取文本中指定位置和长度的一段文字"
+      "description": "Extrait une portion de texte selon la position et la longueur."
     },
     "SplitString": {
       "display_name": "Diviser chaîne (SplitString)",
-      "description": "按照指定符号将一整段文字拆分成多个部分"
+      "description": "Divise un texte en liste selon un séparateur."
     },
     "JoinString": {
       "display_name": "Joindre chaînes (JoinString)",
-      "description": "使用指定的分隔符将多段文字拼接组合成一整句话"
+      "description": "Assemble les éléments d'un tableau en un seul texte avec séparateur."
     },
     "RegexProcess": {
       "display_name": "Expression régulière (RegexProcess)",
-      "description": "使用正则表达式查找、提取或批量替换符合规则的文字"
+      "description": "Cherche, extrait ou remplace du texte à l'aide d'expressions régulières."
     },
     "TextTransform": {
       "display_name": "Transformer texte (TextTransform)",
-      "description": "去除文本两端空格、转换英文字母大小写、或进行常用文本编解码"
+      "description": "Supprime les espaces, change la casse ou encode/décode en Base64/URL."
     },
     "RandomNumber": {
       "display_name": "Nombre aléatoire (RandomNumber)",
-      "description": "在指定范围内生成一个随机整数或小数"
+      "description": "Génère un nombre entier ou décimal aléatoire dans une plage."
     },
     "MathEval": {
       "display_name": "Évaluation mathématique (MathEval)",
-      "description": "对一组数字计算求和、平均值、最大最小值或进行四则运算"
+      "description": "Calcule la somme, la moyenne, le min, le max ou les opérations arithmétiques."
     },
     "DateTimeHelper": {
       "display_name": "Date & Heure (DateTimeHelper)",
-      "description": "获取当前日期时间、时间戳，或进行时间的加减换算"
+      "description": "Obtient la date/l'heure, horodatages (sec/ms/µs), chaînes ISO-8601 ou calcule des décalages."
     },
     "RandomPoint": {
       "display_name": "Point aléatoire (RandomPoint)",
-      "description": "在目标坐标周围随机轻微偏移，模拟真人的鼠标点击习惯"
+      "description": "Génère des coordonnées légèrement aléatoires pour simuler des clics humains."
     },
     "RectOperations": {
       "display_name": "Opérations sur rectangle (RectOperations)",
-      "description": "计算矩形中心位置、检查某个坐标是否在区域内，或调整区域大小"
+      "description": "Calcule le centre, le test de collision polygone, l'englobant, l'inclusion ou le décalage."
     },
     "GridGenerator": {
       "display_name": "Générateur de grille (GridGenerator)",
-      "description": "自动生成多行多列的网格坐标点，常用于表格行或九宫格批量点击"
+      "description": "Génère une grille de coordonnées à plusieurs lignes et colonnes."
     },
     "HashDigest": {
       "display_name": "Calcul de hachage (HashDigest)",
-      "description": "计算文本或数据的 MD5、SHA256 哈希值，用于数据校验或加密"
+      "description": "Calcule l'empreinte hachée MD5 ou SHA256 d'un texte."
+    },
+    "FileHash": {
+      "display_name": "Hachage de fichier (FileHash)",
+      "description": "Calcule l'empreinte MD5 ou SHA256 de grands fichiers en flux continu sans OOM."
+    },
+    "CreateObject": {
+      "display_name": "Créer un objet (CreateObject)",
+      "description": "Instancier des objets de données structurées en mémoire (Point, Rect, Size, Color, Range, DateTime, etc.)"
     }
   }
 }

@@ -1,7 +1,7 @@
 {
-  "name": "数据算法与文本工具 (Data & Text Tools)",
-  "description": "提供文本查找替换、正则表达式、JSON 数据提取、列表与字典存取、随机数生成、常用计算与 MD5/SHA256 加密等工具",
-  "group": "算法逻辑",
+  "name": "数据与文本工具 (Data & Text Tools)",
+  "description": "提供文本查找替换、正则表达式、JSON 数据提取、列表与字典存取、随机数生成、常用计算与 MD5/SHA256 校验等工具",
+  "group": "数据处理",
   "actions": {
     "AccessArray": {
       "display_name": "访问数组元素 (AccessArray)",
@@ -17,11 +17,11 @@
     },
     "ArrayOperations": {
       "display_name": "集合综合运算 (ArrayOperations)",
-      "description": "对列表进行排序、反转、去重、检查是否包含某项、添加或删除元素等操作"
+      "description": "对列表进行排序、反转、去重、过滤空项、嵌套平铺、检查包含、添加或删除元素等操作"
     },
     "JsonQuery": {
       "display_name": "JSON 路径查询 (JsonQuery)",
-      "description": "根据路径快速提取 JSON 数据中深层的某项具体内容"
+      "description": "根据路径、通配符全量提取或范围切片快速提取 JSON 数据中深层属性"
     },
     "SubString": {
       "display_name": "截取子字符串 (SubString)",
@@ -53,7 +53,7 @@
     },
     "DateTimeHelper": {
       "display_name": "日期时间助手 (DateTimeHelper)",
-      "description": "获取当前日期时间、时间戳，或进行时间的加减换算"
+      "description": "获取当前日期时间、秒/毫秒/微秒时间戳、ISO-8601 格式，或进行时间加减"
     },
     "RandomPoint": {
       "display_name": "生成随机坐标点 (RandomPoint)",
@@ -61,7 +61,7 @@
     },
     "RectOperations": {
       "display_name": "矩形几何计算 (RectOperations)",
-      "description": "计算矩形中心位置、检查某个坐标是否在区域内，或调整区域大小"
+      "description": "计算矩形中心位置、射线法多边形碰撞、外接包围盒、点包含判定或尺寸调整"
     },
     "GridGenerator": {
       "display_name": "网格矩阵生成 (GridGenerator)",
@@ -70,6 +70,14 @@
     "HashDigest": {
       "display_name": "哈希摘要计算 (HashDigest)",
       "description": "计算文本或数据的 MD5、SHA256 哈希值，用于数据校验或加密"
+    },
+    "FileHash": {
+      "display_name": "文件哈希计算 (FileHash)",
+      "description": "分块流式计算大文件的 MD5 或 SHA256 哈希校验和，避免大文件内存溢出"
+    },
+    "CreateObject": {
+      "display_name": "创建对象 (CreateObject)",
+      "description": "在内存中创建结构化数据实体（支持Point、Rect、Size、Color、Range、DateTime等）"
     }
   }
 }

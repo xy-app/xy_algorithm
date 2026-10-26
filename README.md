@@ -1,9 +1,10 @@
 # 🧮 官方核心数据算法与文本变换套件 (Data Algorithm & Text Transform Suite)
 
-[![Plugin Version](https://img.shields.io/badge/version-0.50.5-blue.svg)](manifest.json)
+[![Plugin Version](https://img.shields.io/badge/version-0.53.0-blue.svg)](manifest.json)
 [![Group](https://img.shields.io/badge/group-Algorithm-orange.svg)](#)
 [![Platform](https://img.shields.io/badge/platform-All-green.svg)](#)
 [![License](https://img.shields.io/badge/license-Freeware-brightgreen.svg)](#)
+[![Discord](https://img.shields.io/discord/832082456727257118?label=Discord&logo=discord&logoColor=white&color=5865F2)](https://discord.gg/g5Fh3FtfGx)
 
 企业级数据结构处理、文本清洗转换、自动化坐标生成与实用数学算法套件。专为自动化脚本、RPA 流程、后端任务编排以及数据流清洗设计。
 
@@ -69,14 +70,14 @@
 #### `ArrayOperations` - 集合综合运算
 - **参数：**
   - `array` (*tuple*, 默认 `()`): 输入数组。
-  - `operation` (*string*, 可选: `sort`, `reverse`, `unique`, `contains`, `index_of`, `slice`, `push`, `pop`, `remove_at`)。
+  - `operation` (*string*, 可选: `sort`, `reverse`, `unique`, `filter_empty`, `flatten`, `contains`, `index_of`, `slice`, `push`, `pop`, `remove_at`)。
   - `param` (*string*): 操作附加参数（如切片范围 `0,2` 或待查找的值）。
 - **输出：** `Mixed`
 
 #### `JsonQuery` - JSON 路径查询
 - **参数：**
   - `json` (*string*, 默认 `{}`): JSON 文本或字典对象。
-  - `path` (*string*): 点分路径，如 `data.items[0].id`、`status`。
+  - `path` (*string*): 点分路径与切片，如 `data.items[0].id`、`data.items[*].name`（通配全量提取）、`items[0:5]`（范围切片）。
 - **输出：** `Mixed`
 
 ---
@@ -140,8 +141,8 @@
 
 #### `RectOperations` - 矩形几何计算
 - **参数：**
-  - `rect` (*string*, 默认 `0, 0, 100, 100`): 矩形四元组 `(X, Y, W, H)`。
-  - `operation` (*string*, 可选: `center`, `contains_point`, `offset`, `expand`, `bottom_right`)。
+  - `rect` (*string*, 默认 `0, 0, 100, 100`): 矩形四元组 `(X, Y, W, H)`、多边形点集或多矩形集合。
+  - `operation` (*string*, 可选: `center`, `contains_point`, `contains_polygon`, `union_bbox`, `offset`, `expand`, `bottom_right`)。
   - `param` (*string*): 点坐标 `PX, PY` 或偏移缩放量 `DX, DY`。
 - **输出：** `Mixed`
 

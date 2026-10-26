@@ -1,75 +1,83 @@
 {
-  "name": "数据算法与文本工具 (Data & Text Tools)",
-  "description": "提供文本查找替换、正则表达式、JSON 数据提取、列表与字典存取、随机数生成、常用计算与 MD5/SHA256 加密等工具",
+  "name": "Data Algorithms & Text Tools",
+  "description": "Provides text search/replace, regex processing, JSON query, list/map operations, random number generators, math evaluation, and hash digest tools.",
   "group": "Algorithm",
   "actions": {
     "AccessArray": {
-      "display_name": "Access Array (AccessArray)",
-      "description": "根据位置序号读取、修改或取出列表中的某一项数据"
+      "display_name": "Access Array Element (AccessArray)",
+      "description": "Retrieve, modify, or extract items from an array by index."
     },
     "AccessKey": {
-      "display_name": "Access Key (AccessKey)",
-      "description": "根据名称查询 JSON 或字典中对应的内容"
+      "display_name": "Access Map Key (AccessKey)",
+      "description": "Query JSON or dictionary content by key name."
     },
     "ArraySize": {
-      "display_name": "Array Size (ArraySize)",
-      "description": "计算列表、文本或数组中包含的元素个数"
+      "display_name": "Get Array Size (ArraySize)",
+      "description": "Calculate the number of elements in an array, list, or JSON tuple."
     },
     "ArrayOperations": {
       "display_name": "Array Operations (ArrayOperations)",
-      "description": "对列表进行排序、反转、去重、检查是否包含某项、添加或删除元素等操作"
+      "description": "Sort, reverse, deduplicate, filter empty, flatten, slice, or push/pop elements in arrays."
     },
     "JsonQuery": {
       "display_name": "JSON Query (JsonQuery)",
-      "description": "根据路径快速提取 JSON 数据中深层的某项具体内容"
+      "description": "Extract nested JSON data using dot-notation, wildcard (*), and array slice expressions."
     },
     "SubString": {
       "display_name": "Substring (SubString)",
-      "description": "截取文本中指定位置和长度的一段文字"
+      "description": "Extract a slice of text specified by start position and length."
     },
     "SplitString": {
       "display_name": "Split String (SplitString)",
-      "description": "按照指定符号将一整段文字拆分成多个部分"
+      "description": "Split text into a tuple list using a delimiter."
     },
     "JoinString": {
       "display_name": "Join Strings (JoinString)",
-      "description": "使用指定的分隔符将多段文字拼接组合成一整句话"
+      "description": "Join array items into a single string using a delimiter."
     },
     "RegexProcess": {
-      "display_name": "Regex Process (RegexProcess)",
-      "description": "使用正则表达式查找、提取或批量替换符合规则的文字"
+      "display_name": "Regex Processing (RegexProcess)",
+      "description": "Match, extract, or replace text using regular expressions."
     },
     "TextTransform": {
       "display_name": "Text Transform (TextTransform)",
-      "description": "去除文本两端空格、转换英文字母大小写、或进行常用文本编解码"
+      "description": "Trim, convert case, or perform Base64 and URL encoding/decoding."
     },
     "RandomNumber": {
-      "display_name": "Random Number (RandomNumber)",
-      "description": "在指定范围内生成一个随机整数或小数"
+      "display_name": "Generate Random Number (RandomNumber)",
+      "description": "Generate a random integer or float within a specified range."
     },
     "MathEval": {
       "display_name": "Math Evaluation (MathEval)",
-      "description": "对一组数字计算求和、平均值、最大最小值或进行四则运算"
+      "description": "Perform arithmetic operations, sum, average, min, max, or rounding on numbers."
     },
     "DateTimeHelper": {
-      "display_name": "Date Time Helper (DateTimeHelper)",
-      "description": "获取当前日期时间、时间戳，或进行时间的加减换算"
+      "display_name": "Date & Time Helper (DateTimeHelper)",
+      "description": "Get current timestamp (sec/ms/us), ISO-8601 strings, formatted date strings, or calculate time offsets."
     },
     "RandomPoint": {
-      "display_name": "Random Point (RandomPoint)",
-      "description": "在目标坐标周围随机轻微偏移，模拟真人的鼠标点击习惯"
+      "display_name": "Generate Random Point (RandomPoint)",
+      "description": "Generate randomized coordinate points with jitter to humanize clicks."
     },
     "RectOperations": {
-      "display_name": "Rectangle Operations (RectOperations)",
-      "description": "计算矩形中心位置、检查某个坐标是否在区域内，或调整区域大小"
+      "display_name": "Rectangle Geometry (RectOperations)",
+      "description": "Calculate rectangle center, polygon point-in-polygon test, bounding box, offset, or bounds expansion."
     },
     "GridGenerator": {
       "display_name": "Grid Generator (GridGenerator)",
-      "description": "自动生成多行多列的网格坐标点，常用于表格行或九宫格批量点击"
+      "description": "Generate row/column coordinate grids for multi-cell batch clicks."
     },
     "HashDigest": {
       "display_name": "Hash Digest (HashDigest)",
-      "description": "计算文本或数据的 MD5、SHA256 哈希值，用于数据校验或加密"
+      "description": "Compute MD5 or SHA256 hashes for strings or text data."
+    },
+    "FileHash": {
+      "display_name": "Compute File Hash (FileHash)",
+      "description": "Stream and compute MD5 or SHA256 checksums for files without memory overflow."
+    },
+    "CreateObject": {
+      "display_name": "Create Object (CreateObject)",
+      "description": "Instantiate structured data objects in memory (Point, Rect, Size, Color, Range, DateTime, etc.)"
     }
   }
 }

@@ -1,12 +1,9 @@
 ﻿# 集合综合运算 (ArrayOperations)
 
-对数组或元组执行一站式全能集合算法操作，包括排序、反转、去重、包含判定、元素查找、切片提取、元素追加与末尾弹出。
+对数组或元组执行一站式全能集合算法操作，包括排序、反转、去重、过滤空项、嵌套平铺、包含判定、元素查找、切片提取、元素追加与末尾弹出。
 
 ## 权限要求
 > 无要求
-
-## 子流程
-> 不支持
 
 ## 运行参数
 
@@ -15,6 +12,8 @@
   * `sort`：正序排列数组元素
   * `reverse`：反转数组元素次序
   * `unique`：去除数组中的重复项并保留首次出现顺序
+  * `filter_empty` / `compact`：剔除数组中的空字符串或空子组
+  * `flatten`：将嵌套的元组或数组结构打平一维化
   * `contains`：判断数组是否包含参数指定的元素值（包含返回 1，不包含返回 0）
   * `index_of`：查找指定元素在数组中的索引位置（从 0 开始，未找到返回 -1）
   * `slice`：提取数组切片子集（参数格式为 `"start, end"` 或 `"start"`）
@@ -28,17 +27,17 @@
   * 在 `remove_at` 模式下：为待移除元素的索引下标（如 `1`）
 
 ## 输出
-* 针对 `push` / `sort` / `reverse` / `unique` / `slice` / `remove_at`：返回变换后的全新元组数组 `Tuple`。
+* 针对 `push` / `sort` / `reverse` / `unique` / `slice` / `remove_at` / `filter_empty` / `flatten`：返回变换后的全新元组数组 `Tuple`。
 * 针对 `pop`：返回弹出的末尾元素对象。
 * 针对 `contains` / `index_of`：返回整型数值 `Number`。
 
 ## 示例
 ```json
-// 去重
+// 过滤空项
 {
-  "array": ["apple", "banana", "apple", "orange"],
-  "operation": "unique",
+  "array": ["apple", "", "banana", "  "],
+  "operation": "filter_empty",
   "param": ""
 }
-// 输出: ["apple", "banana", "orange"]
+// 输出: ["apple", "banana"]
 ```

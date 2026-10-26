@@ -1,10 +1,10 @@
 {
   "plugin_id": "xy_algorithm",
-  "name": "数据算法与文本工具 (Data & Text Tools)",
-  "version": "0.51.0",
+  "name": "数据与文本工具 (Data & Text Tools)",
+  "version": "0.53.0",
   "group": "Algorithm",
   "group_icon": "🧮",
-  "description": "提供文本查找替换、正则表达式、JSON 数据提取、列表与字典存取、随机数生成、常用计算与 MD5/SHA256 加密等工具",
+  "description": "提供文本查找替换、正则表达式、JSON 数据提取、列表与字典存取、随机数生成、常用计算、文件与文本 MD5/SHA256 校验和等工具",
   "actions": [
     {
       "tag": "AccessArray",
@@ -25,6 +25,8 @@
           "name": "value",
           "display_name": "目标数组",
           "intrinsic_type": "string",
+          "required": true,
+          "group": "数组索引",
           "default_type": "string",
           "default_value": "()",
           "presets": [],
@@ -33,7 +35,9 @@
         {
           "name": "index",
           "display_name": "索引位置",
-          "intrinsic_type": "string",
+          "intrinsic_type": "Integer",
+          "required": true,
+          "group": "数组索引",
           "default_type": "number",
           "default_value": "0",
           "presets": [
@@ -66,6 +70,8 @@
           "name": "map",
           "display_name": "目标字典",
           "intrinsic_type": "string",
+          "required": true,
+          "group": "字典查值",
           "default_type": "string",
           "default_value": "{}",
           "presets": [],
@@ -75,6 +81,8 @@
           "name": "key",
           "display_name": "键名称",
           "intrinsic_type": "string",
+          "required": true,
+          "group": "字典查值",
           "default_type": "string",
           "default_value": "",
           "presets": [],
@@ -102,6 +110,8 @@
           "name": "value",
           "display_name": "目标集合",
           "intrinsic_type": "string",
+          "required": true,
+          "group": "集合计算",
           "default_type": "string",
           "default_value": "()",
           "presets": [],
@@ -132,6 +142,8 @@
           "name": "array",
           "display_name": "输入数组",
           "intrinsic_type": "string",
+          "required": true,
+          "group": "集合操作",
           "default_type": "tuple",
           "default_value": "()",
           "presets": [],
@@ -140,7 +152,9 @@
         {
           "name": "operation",
           "display_name": "操作指令",
-          "intrinsic_type": "string",
+          "intrinsic_type": "Enum",
+          "required": true,
+          "group": "集合操作",
           "default_type": "string",
           "default_value": "sort",
           "presets": [
@@ -160,6 +174,7 @@
           "name": "param",
           "display_name": "操作参数",
           "intrinsic_type": "string",
+          "group": "指令参数",
           "default_type": "string",
           "default_value": "",
           "presets": [],
@@ -187,6 +202,8 @@
           "name": "json",
           "display_name": "输入 JSON",
           "intrinsic_type": "string",
+          "required": true,
+          "group": "JSON 提取",
           "default_type": "string",
           "default_value": "{}",
           "presets": [],
@@ -196,6 +213,8 @@
           "name": "path",
           "display_name": "提取路径",
           "intrinsic_type": "string",
+          "required": true,
+          "group": "JSON 提取",
           "default_type": "string",
           "default_value": "",
           "presets": [
@@ -225,6 +244,8 @@
           "name": "text",
           "display_name": "输入文本",
           "intrinsic_type": "string",
+          "required": true,
+          "group": "截取文本",
           "default_type": "string",
           "default_value": "",
           "presets": [],
@@ -233,7 +254,9 @@
         {
           "name": "start",
           "display_name": "起始位置",
-          "intrinsic_type": "number",
+          "intrinsic_type": "Integer",
+          "required": true,
+          "group": "截取区间",
           "default_type": "number",
           "default_value": "0",
           "presets": [
@@ -246,7 +269,8 @@
         {
           "name": "length",
           "display_name": "截取长度",
-          "intrinsic_type": "number",
+          "intrinsic_type": "Integer",
+          "group": "截取区间",
           "default_type": "number",
           "default_value": "-1",
           "presets": [
@@ -276,6 +300,8 @@
           "name": "text",
           "display_name": "输入文本",
           "intrinsic_type": "string",
+          "required": true,
+          "group": "拆分文本",
           "default_type": "string",
           "default_value": "",
           "presets": [],
@@ -285,6 +311,8 @@
           "name": "delimiter",
           "display_name": "拆分分隔符",
           "intrinsic_type": "string",
+          "required": true,
+          "group": "拆分文本",
           "default_type": "string",
           "default_value": ",",
           "presets": [
@@ -316,6 +344,8 @@
           "name": "array",
           "display_name": "字符串数组",
           "intrinsic_type": "string",
+          "required": true,
+          "group": "连接文本",
           "default_type": "tuple",
           "default_value": "()",
           "presets": [],
@@ -325,6 +355,7 @@
           "name": "delimiter",
           "display_name": "连接分隔符",
           "intrinsic_type": "string",
+          "group": "连接文本",
           "default_type": "string",
           "default_value": ",",
           "presets": [
@@ -357,6 +388,8 @@
           "name": "text",
           "display_name": "输入文本",
           "intrinsic_type": "string",
+          "required": true,
+          "group": "正则匹配",
           "default_type": "string",
           "default_value": "",
           "presets": [],
@@ -366,6 +399,8 @@
           "name": "pattern",
           "display_name": "正则模式",
           "intrinsic_type": "string",
+          "required": true,
+          "group": "正则匹配",
           "default_type": "string",
           "default_value": "\\d+",
           "presets": [
@@ -378,7 +413,9 @@
         {
           "name": "action_type",
           "display_name": "处理动作",
-          "intrinsic_type": "string",
+          "intrinsic_type": "Enum",
+          "required": true,
+          "group": "正则动作",
           "default_type": "string",
           "default_value": "extract",
           "presets": [
@@ -393,6 +430,11 @@
           "name": "replacement",
           "display_name": "替换文本",
           "intrinsic_type": "string",
+          "group": "正则动作",
+          "visible_if": {
+            "field": "action_type",
+            "one_of": ["replace"]
+          },
           "default_type": "string",
           "default_value": "",
           "presets": [],
@@ -422,6 +464,8 @@
           "name": "text",
           "display_name": "输入文本",
           "intrinsic_type": "string",
+          "required": true,
+          "group": "文本转换",
           "default_type": "string",
           "default_value": "",
           "presets": [],
@@ -430,7 +474,9 @@
         {
           "name": "operation",
           "display_name": "转换类型",
-          "intrinsic_type": "string",
+          "intrinsic_type": "Enum",
+          "required": true,
+          "group": "文本转换",
           "default_type": "string",
           "default_value": "trim",
           "presets": [
@@ -465,6 +511,8 @@
           "name": "range",
           "display_name": "随机范围",
           "intrinsic_type": "string",
+          "required": true,
+          "group": "随机范围",
           "default_type": "string",
           "default_value": "0..100",
           "presets": [
@@ -497,7 +545,9 @@
         {
           "name": "operation",
           "display_name": "运算指令",
-          "intrinsic_type": "string",
+          "intrinsic_type": "Enum",
+          "required": true,
+          "group": "数学运算",
           "default_type": "string",
           "default_value": "sum",
           "presets": [
@@ -519,6 +569,8 @@
           "name": "values",
           "display_name": "数值集合/首参数",
           "intrinsic_type": "string",
+          "required": true,
+          "group": "运算数据",
           "default_type": "string",
           "default_value": "",
           "presets": [],
@@ -527,7 +579,8 @@
         {
           "name": "param",
           "display_name": "附加参数/次参数",
-          "intrinsic_type": "number",
+          "intrinsic_type": "Real",
+          "group": "运算数据",
           "default_type": "number",
           "default_value": "0",
           "presets": [
@@ -557,7 +610,9 @@
         {
           "name": "operation",
           "display_name": "操作指令",
-          "intrinsic_type": "string",
+          "intrinsic_type": "Enum",
+          "required": true,
+          "group": "时间功能",
           "default_type": "string",
           "default_value": "now",
           "presets": [
@@ -572,6 +627,7 @@
           "name": "format_str",
           "display_name": "格式化规则",
           "intrinsic_type": "string",
+          "group": "格式与偏移",
           "default_type": "string",
           "default_value": "%Y-%m-%d %H:%M:%S",
           "presets": [
@@ -585,7 +641,8 @@
         {
           "name": "offset_seconds",
           "display_name": "时间偏移秒数",
-          "intrinsic_type": "number",
+          "intrinsic_type": "Integer",
+          "group": "格式与偏移",
           "default_type": "number",
           "default_value": "0",
           "presets": [
@@ -617,6 +674,8 @@
           "name": "center",
           "display_name": "中心坐标 (X, Y)",
           "intrinsic_type": "string",
+          "required": true,
+          "group": "随机坐标",
           "default_type": "string",
           "default_value": "100, 100",
           "presets": [
@@ -627,7 +686,8 @@
         {
           "name": "radius",
           "display_name": "扰动半径 (像素)",
-          "intrinsic_type": "number",
+          "intrinsic_type": "Integer",
+          "group": "随机坐标",
           "default_type": "number",
           "default_value": "10",
           "presets": [
@@ -659,6 +719,8 @@
           "name": "rect",
           "display_name": "目标矩形 (X, Y, W, H)",
           "intrinsic_type": "string",
+          "required": true,
+          "group": "矩形计算",
           "default_type": "string",
           "default_value": "0, 0, 100, 100",
           "presets": [
@@ -669,7 +731,9 @@
         {
           "name": "operation",
           "display_name": "操作指令",
-          "intrinsic_type": "string",
+          "intrinsic_type": "Enum",
+          "required": true,
+          "group": "矩形计算",
           "default_type": "string",
           "default_value": "center",
           "presets": [
@@ -685,6 +749,7 @@
           "name": "param",
           "display_name": "运算参数",
           "intrinsic_type": "string",
+          "group": "运算参数",
           "default_type": "string",
           "default_value": "",
           "presets": [
@@ -715,6 +780,8 @@
           "name": "start_point",
           "display_name": "起始左上角 (X, Y)",
           "intrinsic_type": "string",
+          "required": true,
+          "group": "网格定义",
           "default_type": "string",
           "default_value": "100, 100",
           "presets": [
@@ -726,7 +793,9 @@
         {
           "name": "rows",
           "display_name": "网格行数",
-          "intrinsic_type": "number",
+          "intrinsic_type": "Integer",
+          "required": true,
+          "group": "网格定义",
           "default_type": "number",
           "default_value": "3",
           "presets": [
@@ -739,7 +808,9 @@
         {
           "name": "cols",
           "display_name": "网格列数",
-          "intrinsic_type": "number",
+          "intrinsic_type": "Integer",
+          "required": true,
+          "group": "网格定义",
           "default_type": "number",
           "default_value": "3",
           "presets": [
@@ -753,6 +824,7 @@
           "name": "step",
           "display_name": "间距步长 (DX, DY)",
           "intrinsic_type": "string",
+          "group": "网格定义",
           "default_type": "string",
           "default_value": "50, 50",
           "presets": [
@@ -783,6 +855,8 @@
           "name": "text",
           "display_name": "输入文本",
           "intrinsic_type": "string",
+          "required": true,
+          "group": "哈希摘要",
           "default_type": "string",
           "default_value": "",
           "presets": [],
@@ -790,18 +864,109 @@
         },
         {
           "name": "algorithm",
-          "display_name": "哈希算法",
-          "intrinsic_type": "string",
+          "display_name": "校验算法",
+          "intrinsic_type": "Enum",
+          "required": true,
+          "group": "哈希摘要",
           "default_type": "string",
           "default_value": "sha256",
           "presets": [
             "sha256",
             "md5"
           ],
-          "description": "算法名称"
+          "description": "校验方式"
         }
       ],
       "output_type": "string"
+    },
+    {
+      "tag": "FileHash",
+      "display_name": "文件哈希计算 (FileHash)",
+      "icon": "🔑",
+      "platforms": "All",
+      "description": "分块流式计算大文件的 MD5 或 SHA256 哈希校验和，避免大文件内存溢出",
+      "keywords": [
+        "algorithm",
+        "hash",
+        "file_hash",
+        "md5",
+        "sha256",
+        "checksum",
+        "文件哈希"
+      ],
+      "fields": [
+        {
+          "name": "file",
+          "display_name": "文件路径",
+          "intrinsic_type": "Path",
+          "required": true,
+          "group": "文件校验",
+          "default_type": "string",
+          "default_value": "",
+          "presets": [],
+          "description": "目标计算文件"
+        },
+        {
+          "name": "algorithm",
+          "display_name": "校验算法",
+          "intrinsic_type": "Enum",
+          "required": true,
+          "group": "文件校验",
+          "default_type": "string",
+          "default_value": "sha256",
+          "presets": [
+            "sha256",
+            "md5"
+          ],
+          "description": "校验方式"
+        }
+      ],
+      "output_type": "string"
+    },
+    {
+      "tag": "CreateObject",
+      "display_name": "创建对象 (CreateObject)",
+      "icon": "📦",
+      "platforms": "All",
+      "description": "在内存中创建结构化数据实体（支持Point、Rect、Size、Color、Range、DateTime、Dict及Tuple等）",
+      "keywords": [
+        "algorithm",
+        "object",
+        "create",
+        "struct",
+        "Point",
+        "Rect",
+        "Size",
+        "Color",
+        "Range",
+        "Dict",
+        "DateTime",
+        "Tuple",
+        "创建对象",
+        "实体构造"
+      ],
+      "fields": [
+        {
+          "name": "value",
+          "display_name": "数据载荷/模板",
+          "intrinsic_type": "string",
+          "required": true,
+          "group": "对象构造",
+          "default_type": "string",
+          "default_value": "",
+          "presets": [
+            "{\"x\": 0, \"y\": 0}",
+            "{\"width\": 1920, \"height\": 1080}",
+            "{\"x\": 0, \"y\": 0, \"width\": 1920, \"height\": 1080}",
+            "{\"r\": 255, \"g\": 0, \"b\": 0, \"a\": 255}",
+            "0..100",
+            "now",
+            "[1, 2, 3]"
+          ],
+          "description": "字面量、JSON 模板或构造表达式"
+        }
+      ],
+      "output_type": "Mixed"
     }
   ]
 }
